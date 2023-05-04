@@ -1,0 +1,9 @@
+mode: set
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:13.54,16.2 2 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:18.60,19.39 1 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:19.39,20.20 1 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:20.20,23.4 2 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:25.2,26.21 2 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:29.52,30.39 1 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:30.39,31.20 1 1
+github.com/haris97m/bookstore-management-system/controller/book_handler_impl.go:31.20,34.4 2 1

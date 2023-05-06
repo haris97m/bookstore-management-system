@@ -7,18 +7,20 @@ import (
 )
 
 func TestBookHandler_AddBook(t *testing.T) {
-	bookstore := BookStore{}
+	bookstore := NewBookStore()
 	newBook := model.Book{ID: 1, Title: "One Piece", Author: "Eiichiro Oda", Quantity: 1_000, Available: true}
 	bookstore.AddBook(newBook)
 
 	if len(bookstore.books) != 1 {
 		t.Errorf("Expected added 1 book, but got %v", len(bookstore.books))
 	}
+
+	bookstore.RemoveBookByID(1)
 }
 
 func TestBookHandler_GetBookByID(t *testing.T) {
-	bookstore := BookStore{}
-	newBook := model.Book{ID: 1, Title: "One Piece", Author: "Eiichiro Oda", Quantity: 1_000, Available: true}
+	bookstore := NewBookStore()
+	newBook := model.Book{ID: 1, Title: "One Piece", Author: "Eiichiro Oda", Quantity: 100, Available: true}
 	bookstore.AddBook(newBook)
 
 	// Test Found Book
@@ -32,11 +34,13 @@ func TestBookHandler_GetBookByID(t *testing.T) {
 	if notFoundBook.ID != 0 {
 		t.Errorf("Expected to not find book, but got book with ID %v", notFoundBook.ID)
 	}
+
+	bookstore.RemoveBookByID(1)
 }
 
 func TestBookHandler_RemoveBookByID(t *testing.T) {
-	bookstore := BookStore{}
-	newBook := model.Book{ID: 1, Title: "One Piece", Author: "Eiichiro Oda", Quantity: 1_000, Available: true}
+	bookstore := NewBookStore()
+	newBook := model.Book{ID: 1, Title: "One Piece", Author: "Eiichiro Oda", Quantity: 100, Available: true}
 	bookstore.AddBook(newBook)
 
 	bookstore.RemoveBookByID(1)
